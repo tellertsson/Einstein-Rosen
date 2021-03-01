@@ -1,33 +1,49 @@
 body, html {
-    margin:0;
-    padding:0;
-    background:#ebd2c2;
+    margin: 0;
+    padding: 0;
+    background: #ebd2c2;
     font-family: 'Open Sans', sans-serif;
     color: #190D38;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-top:0;
+    margin-top: 0;
     font-family: 'Raleway', sans-serif;
+}
+
+p {
+    margin-top: 0;
 }
 
 h1 {
     position: relative;
-    font-size:2.5rem;
+    font-size: 2.5rem;
     animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
     animation-delay: 0.2s;
 }
 
+h2 {
+    position: relative;
+    font-style: italic;
+    font-weight: normal;
+    animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    animation-delay: 0.3s;
+}
+
 main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: [first] auto [line2] 30vw [line3] auto [end];
+    grid-template-rows: [heading-start] 2.5rem [heading-end] 2.5rem [center-start] auto [center-end] auto [last-line];
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: start;
     box-sizing: border-box;
-    justify-content: flex-start;
-    padding:2.5rem;
-    box-shadow:0 4px 4px rgba(0, 0, 0, 0.397);
+    padding: 2rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.397);
     color: #E4E0DD;
-    width:100%;
-    min-height:100vh;
+    width: 100%;
+    min-height: 100vh;
     background-color:#190D38;
     background-image: url("./assets/background.png");
     background-size:cover;
@@ -35,55 +51,91 @@ main {
     background-position: center;
 }
 
-main > h1 {
-    max-width: 60%;
+main header {
+    grid-column-start: first;
+    grid-column-end: line3;
 }
 
-.main-content-wrapper {
+main .sub-header {
+    grid-column-start: first;
+    grid-column-end: line3;
+    grid-row-start: heading-end;
+}
+
+.text-box {
     position: relative;
-    margin-top:20px;
-    width:100%;
-    display:flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    box-sizing: border-box;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.226);
+    font-size: 0.9rem;
+    background-color: #3a315a6b;
+    padding: 0.9rem;
+    border-radius: 1rem;
     animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
     animation-delay: 0.5s;
 }
 
-.main-content-wrapper * {
-    box-sizing: border-box;
-    flex-grow:1;
-    max-width:350px;
-    
+main #left-text {
+    grid-column-start: first;
+    grid-column-end: line2;
+    grid-row-start: center-start;
 }
 
+main #right-text {
+    grid-column-start: line3;
+    grid-column-end: end;
+    grid-row-start: center-start;
+    grid-row-end: center-end;
+}
 
-.wormhole {
+main .scroll {
+    grid-column-start: line2;
+    grid-column-end: line3;
+    grid-row-start: center-end;
+    display:flex;
+    justify-content: center;
+    align-self: end;
+}
+
+main .scroll img {
+    width: 3rem;
+    filter: invert(99%) sepia(1%) saturate(1922%) hue-rotate(315deg) brightness(88%) contrast(101%);
+}
+
+main .image {
+    grid-column-start: line2;
+    grid-column-end: line3;
+    grid-row-start: heading-end;
+    grid-row-end: center-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#wormhole {
+    width: auto;
+    height: auto; 
+    max-width: 300px;
     position: relative;
-    display: block;
-    width:auto;
-    height:auto;
-    max-width:300px;
-    transform:rotate(20deg);
-    animation:idle 5s infinite ease-in-out;
-    animation-delay: 1s;
+    animation: idle2 2.5s infinite;
 }
 
-.text-box {
-    padding:1rem;
-    background:#1209348f; 
-    border-radius:10px;
-}
 
+#pen {
+    top: 30px;
+    position: relative;
+    transform: rotate(55deg);
+    max-height:200px;
+    animation: idle 5s infinite;
+}
 
 .about {
-    margin-top:100px;
+    margin-top: 100px;
     box-sizing: border-box;
-    padding:2.5rem;
-    max-width:1100px;
-    margin-left:auto;
-    margin-right:auto;
-    display:flex;
+    padding: 2.5rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -98,37 +150,48 @@ main > h1 {
 
 footer {
     text-align: center;
-    margin-left:auto;
-    margin-right:auto;
-    max-width:600px;
-    margin-top:10px;
-    margin-bottom:50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 @keyframes idle {
     0% {
-        top: 0px;
-        transform:rotate(20deg);
+        top: 30px;
     }
     50% {
-        top: 20px;
-        transform:rotate(25deg);
+        top: 50px;
+        transform: rotate(50deg)
+    }
+    
+    100% {
+        top: 30px
+    }
+} 
+
+@keyframes idle2 {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: -5px;
     }
     
     100% {
         top: 0px;
-        transform:rotate(20deg);
     }
 } 
 
 @keyframes appear {
     0% {
-        opacity:0;
+        opacity: 0;
         bottom: -15px;
     }
 
     100% {
-        opacity:1;
-        bottom:0;
+        opacity: 1;
+        bottom: 0;
     }
 }
