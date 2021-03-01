@@ -1,0 +1,134 @@
+body, html {
+    margin:0;
+    padding:0;
+    background:#ebd2c2;
+    font-family: 'Open Sans', sans-serif;
+    color: #190D38;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top:0;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    position: relative;
+    font-size:2.5rem;
+    animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    animation-delay: 0.2s;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    padding:2.5rem;
+    box-shadow:0 4px 4px rgba(0, 0, 0, 0.397);
+    color: #E4E0DD;
+    width:100%;
+    min-height:100vh;
+    background-color:#190D38;
+    background-image: url("./assets/background.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main > h1 {
+    max-width: 60%;
+}
+
+.main-content-wrapper {
+    position: relative;
+    margin-top:20px;
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    animation-delay: 0.5s;
+}
+
+.main-content-wrapper * {
+    box-sizing: border-box;
+    flex-grow:1;
+    max-width:350px;
+    
+}
+
+
+.wormhole {
+    position: relative;
+    display: block;
+    width:auto;
+    height:auto;
+    max-width:300px;
+    transform:rotate(20deg);
+    animation:idle 5s infinite ease-in-out;
+    animation-delay: 1s;
+}
+
+.text-box {
+    padding:1rem;
+    background:#1209348f; 
+    border-radius:10px;
+}
+
+
+.about {
+    margin-top:100px;
+    box-sizing: border-box;
+    padding:2.5rem;
+    max-width:1100px;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    justify-content: space-between;
+}
+
+.about .content {
+    flex-grow: 2;
+
+}
+
+.about img {
+    max-width: 100%;
+}
+
+footer {
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:600px;
+    margin-top:10px;
+    margin-bottom:50px;
+}
+
+@keyframes idle {
+    0% {
+        top: 0px;
+        transform:rotate(20deg);
+    }
+    50% {
+        top: 20px;
+        transform:rotate(25deg);
+    }
+    
+    100% {
+        top: 0px;
+        transform:rotate(20deg);
+    }
+} 
+
+@keyframes appear {
+    0% {
+        opacity:0;
+        bottom: -15px;
+    }
+
+    100% {
+        opacity:1;
+        bottom:0;
+    }
+}
