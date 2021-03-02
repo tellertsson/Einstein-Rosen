@@ -44,9 +44,9 @@ main {
     color: #E4E0DD;
     width: 100%;
     min-height: 100vh;
-    background-color:#190D38;
+    background-color: #190D38;
     background-image: url("./assets/background.png");
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -91,10 +91,10 @@ main .scroll {
     grid-column-start: line2;
     grid-column-end: line3;
     grid-row-start: center-end;
-    display:flex;
-    justify-content: center;
+    text-align:center;
     align-self: end;
 }
+
 
 main .scroll img {
     width: 3rem;
@@ -112,20 +112,31 @@ main .image {
 }
 
 #wormhole {
+    z-index: 2;
     width: auto;
-    height: auto; 
+    height: auto;
     max-width: 300px;
     position: relative;
-    animation: idle2 2.5s infinite;
+    animation: idle2 0s infinite;
 }
 
+#wormhole:hover {
+    animation: jello-vertical 0.9s both;
+}
 
 #pen {
-    top: 30px;
     position: relative;
-    transform: rotate(55deg);
-    max-height:200px;
-    animation: idle 5s infinite;
+    transform-origin: bottom;
+    transform: rotate(12deg);
+    animation: idle 3s infinite ease-in-out 0.8s;
+    top: 10px;
+    max-height: 200px;
+    display: block;
+}
+
+.pen-container {
+    z-index: 100;
+    animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both
 }
 
 .about {
@@ -141,7 +152,6 @@ main .image {
 
 .about .content {
     flex-grow: 2;
-
 }
 
 .about img {
@@ -159,39 +169,99 @@ footer {
 
 @keyframes idle {
     0% {
+        top: 10px;
+    }
+    55% {
         top: 30px;
     }
-    50% {
-        top: 50px;
-        transform: rotate(50deg)
-    }
-    
     100% {
-        top: 30px
+        top: 10px;
     }
-} 
-
-@keyframes idle2 {
-    0% {
-        top: 0px;
-    }
-    50% {
-        top: -5px;
-    }
-    
-    100% {
-        top: 0px;
-    }
-} 
+}
 
 @keyframes appear {
     0% {
         opacity: 0;
         bottom: -15px;
     }
-
     100% {
         opacity: 1;
         bottom: 0;
+    }
+}
+
+@keyframes jello-vertical {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(0.85, 1.15, 1);
+        transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes slide-in-blurred-bottom {
+    0% {
+        -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items:stretch;
+        padding:1rem;
+    }
+
+    main header h1 {
+        margin-bottom:0;
+    }
+
+    main .scroll {
+        margin-top:20px;
+        width:100%;
+    }
+
+    .about {
+        margin-top:15px;
+        flex-direction: column;
     }
 }
