@@ -13,6 +13,17 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin-top: 0;
+    margin-bottom:1.5rem;
+}
+
+a {
+    color: #6948bb;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 h1 {
@@ -30,15 +41,24 @@ h2 {
     animation-delay: 0.3s;
 }
 
+h3 {
+    margin-bottom:0.3rem;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
 main {
     display: grid;
-    grid-template-columns: [first] auto [line2] 30vw [line3] auto [end];
-    grid-template-rows: [heading-start] 2.5rem [heading-end] 2.5rem [center-start] auto [center-end] auto [last-line];
+    grid-template-columns: [first] auto [line2] 25vw [line3] auto [end];
+    grid-template-rows: [heading-start] 2.7rem [heading-end] 2.5rem [center-start] auto [center-end] auto [last-line];
     gap: 10px 20px;
     justify-content: center;
     align-items: start;
     box-sizing: border-box;
     padding: 2rem;
+    padding-top:1.2rem;
     padding-bottom: 0.5rem;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.397);
     color: #E4E0DD;
@@ -140,7 +160,7 @@ main .image {
 }
 
 .about {
-    margin-top: 100px;
+    margin-top: 50px;
     box-sizing: border-box;
     padding: 2.5rem;
     max-width: 1100px;
@@ -150,11 +170,30 @@ main .image {
     justify-content: space-between;
 }
 
+
+.about h1 {
+    margin-bottom: 1rem;
+}
+
 .about .content {
-    flex-grow: 2;
+    max-width: 600px;
+}
+
+.about .image-wrapper {
+    max-width:500px;
+    margin-left:3rem;
+    display:flex;
+    align-items:center;
+}
+
+.about .content ul {
+    padding: 0;
+    list-style-type: none;
 }
 
 .about img {
+    width:auto;
+    height:auto;
     max-width: 100%;
 }
 
@@ -163,8 +202,13 @@ footer {
     margin-left: auto;
     margin-right: auto;
     max-width: 600px;
-    margin-top: 10px;
     margin-bottom: 50px;
+    opacity:0.7;
+    transition: opacity 0.3s;
+}
+
+footer:hover {
+    opacity:1;
 }
 
 @keyframes idle {
@@ -263,5 +307,15 @@ footer {
     .about {
         margin-top:15px;
         flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    main .text-box{
+        font-size: 1.1rem;
+    }
+
+    .about .content {
+        font-size: 1.1rem;
     }
 }
