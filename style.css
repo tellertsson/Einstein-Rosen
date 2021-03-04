@@ -65,7 +65,7 @@ main {
     width: 100%;
     min-height: 100vh;
     background-color: #190D38;
-    background-image: url("./assets/background.png");
+    background-image: url("./assets/background_bright.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -87,7 +87,7 @@ main .sub-header {
     box-sizing: border-box;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.226);
     font-size: 0.9rem;
-    background-color: #3a315a6b;
+    background-color: #424172bb;
     padding: 0.9rem;
     border-radius: 1rem;
     animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
