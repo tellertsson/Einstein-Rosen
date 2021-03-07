@@ -89,6 +89,8 @@ main .credit {
     grid-row-end: heading-end; 
     text-align: right;
     font-size:0.8rem;
+    animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    animation-delay: 0.3s;
 }
 
 .text-box {
