@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin-top: 0;
-    margin-bottom:1.5rem;
+    margin-bottom:0.9rem;
 }
 
 a {
@@ -37,8 +37,10 @@ h2 {
     position: relative;
     font-style: italic;
     font-weight: normal;
+    font-size:1.1rem;
     animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
     animation-delay: 0.3s;
+    max-width:40vw;
 }
 
 h3 {
@@ -82,22 +84,52 @@ main .sub-header {
     grid-row-start: heading-end;
 }
 
+main .credit {
+    grid-column-start: line3;
+    grid-row-end: heading-end; 
+    text-align: right;
+    font-size:0.8rem;
+}
+
 .text-box {
     position: relative;
     box-sizing: border-box;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.226);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     background-color: #443b6bb9;
-    padding: 0.9rem;
+    padding: 0.5rem;
+    margin-bottom:1.8rem;
     border-radius: 1rem;
     animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
     animation-delay: 0.5s;
+}
+
+.footnote {
+    position: relative;
+    display: none;
+    font-size: 80%;
+    font-style: italic;
+    padding-top:0.5rem;
+    border-top: solid 1px white;
+    transition:all 0.3s;
+    animation: appear 0.3s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+}
+
+.reference {
+    color:rgb(189, 158, 240);
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.reference:hover {
+    text-decoration: underline;
 }
 
 main #left-text {
     grid-column-start: first;
     grid-column-end: line2;
     grid-row-start: center-start;
+    grid-row-end: last-line;
 }
 
 main #right-text {
@@ -105,14 +137,19 @@ main #right-text {
     grid-column-end: end;
     grid-row-start: center-start;
     grid-row-end: center-end;
+    grid-row-end: last-line;
 }
 
 main .scroll {
+    position: relative;
+    animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    animation-delay: 0.8s;
     grid-column-start: line2;
     grid-column-end: line3;
     grid-row-start: center-end;
     text-align:center;
     align-self: end;
+    font-size: 0.9rem;
 }
 
 
@@ -135,9 +172,9 @@ main .image {
     z-index: 2;
     width: auto;
     height: auto;
+    max-width:100%;
     max-width: 300px;
     position: relative;
-    animation: idle2 0s infinite;
 }
 
 #wormhole:hover {
@@ -295,6 +332,10 @@ footer:hover {
         padding:1rem;
     }
 
+    h2 {
+        max-width:100%;
+    }
+
     main header h1 {
         margin-bottom:0;
     }
@@ -307,6 +348,10 @@ footer:hover {
     .about {
         margin-top:15px;
         flex-direction: column;
+    }
+
+    main .credit {
+        text-align: left;
     }
 }
 

@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#341F73">
+    <script src="script.js"></script>
     <title>Einstein-Rosen bridge</title>
 </head>
 <body>
@@ -17,37 +19,53 @@
         <div class="sub-header">
             <h2>Tidsresor är ett vanligt förekommande tema i böcker och filmer, men är det verkligen bara science fiction?</h2>
         </div>
-        <div class="text-box" id="left-text">
-            <h3>En genväg genom kosmos</h3>
-            <p>
-                Inget kan färdas snabbare än ljuset. Ljusets hastighet i vakuum är c = 3*10^8 m/s, det vill säga ofantligt mycket snabbare än både jetplan och Tour de France-cyklister. Ur ett kosmiskt perspektiv är detta en begränsande faktor, där avstånden mellan galaxer och himlakroppar kan vara tusentals miljoner ljusår. Einsteins relativitetsteori öppnar upp för ett alternativt färdsätt som kringgår problemet med hastighetsbegränsningen. Lösningen ges av passager i rumtiden, så kallade maskhål.
-            </p>
-            <h3>Vad är ett maskhål?</h3>
-            <p>
-                Idén om maskhål kom ursprungligen från österrikaren Ludwig Flamm som pratade om ett “vitt hål”, vilket till skillnad från svarta hål skulle kasta ut materia istället för att dra det mot sig. Albert Einstein och Nathan Rosen vidareutvecklade idén med hjälp av relativitetsteorin och rumtidens krökningar, varefter de insåg att maskhål är matematiskt möjliga. 
-            </p>
-            <p>
-                Einstein-Rosen broar, som passagerarna benämns, kan visualiseras som tunnlar vilka förbinder två punkter i rumtiden, antingen olika platser, tidpunkter eller både och. Broarna kan liknas med genvägar som skulle korta ner både avstånd och restid mellan objekt som annars befinner sig flera ljusår ifrån varandra. 
-            </p>
+        <div class="credit">
+            Annie Carlsson, CID: anniecar <br>
+            Tess Ellertson, CID: tesse
+        </div>
+        <div id="left-text">
+            <div class="text-box">
+                <h3>En genväg genom kosmos</h3>
+                <p>
+                    Inget kan färdas <a class="reference" onclick="footnote(1)">snabbare än ljuset</a>.
+                    Ur ett kosmiskt perspektiv är detta en begränsande faktor, där avstånden mellan galaxer och himlakroppar kan vara tusentals miljoner ljusår. Einsteins relativitetsteori öppnar upp för ett alternativt färdsätt som kringgår problemet med hastighetsbegränsningen. Lösningen ges av passager i rumtiden, så kallade maskhål.
+                </p> 
+                <p id="footnote1" class="footnote">
+                    Ljusets hastighet i vakuum är c = 3·10 <sup>8</sup> m/s, det vill säga ofantligt mycket snabbare än både jetplan och Tour de France-cyklister. 
+                </p>
+            </div>
+            <div class="text-box">
+                <h3>Vad är ett maskhål?</h3>
+                <p>
+                    Idén om maskhål kom ursprungligen från österrikaren Ludwig Flamm som pratade om ett “vitt hål”, vilket till skillnad från svarta hål skulle kasta ut materia istället för att dra det mot sig. Albert Einstein och Nathan Rosen vidareutvecklade idén med hjälp av relativitetsteorin och rumtidens krökningar, varefter de insåg att maskhål är matematiskt möjliga. 
+                </p>
+                <p>
+                    Einstein-Rosen broar, som passagerarna benämns, kan visualiseras som tunnlar vilka förbinder två punkter i rumtiden, antingen olika platser, tidpunkter eller både och. Broarna kan liknas med genvägar som skulle korta ner både avstånd och restid mellan objekt som annars befinner sig flera ljusår ifrån varandra. 
+                </p>
+            </div>
         </div>
         <div class="image">
             <div class="pen-container">
                 <img id="pen" src="assets/pen.png" alt="pencil">
             </div>
-            <img id="wormhole" src="./assets/wormhole_500px.png" alt="Wormhole">
+            <img id="wormhole" src="./assets/wormhole.png" alt="Wormhole">
         </div>
-        <div class="text-box" id="right-text">
-            <h3>Matematiskt möjliga men ännu inte upptäckta</h3>
-            <p>
-                Trots att de förutspåtts matematiskt har inga maskhål ännu upptäckts och det finns mycket som talar emot teorin. Ursprungliga maskhål förutspås existera i mikroskopisk storlek, cirka 10⁻³³ cm, men det är möjligt att de växer då universum expanderar.
-            </p>
-            <p>
-                Ett annat problem gäller stabiliteten, till följd av gravitationen skulle dessa broar snabbt kollapsa. Einsteins ekvationer visar dessutom att inget med icke-negativ energi skulle kunna passera genom maskhålen, vilket skulle göra dem obrukbara för resor. För att undvika kollaps hade det krävts att de innehöll exempelvis negativ materia.
-            </p>
-            <h3>Existensen får framtiden utvisa</h3>
-            <p>
-                Kanske kommer en Einstein-Rosen bro någon gång hittas, kanske kommer de bara förbli spekulationer och science fiction. Oavsett vilket så är det en spännande matematisk teori som vi med vår pennhållare vill uppmärksamma.
-            </p>
+        <div id="right-text">
+            <div class="text-box">
+                <h3>Matematiskt möjliga men ännu inte upptäckta</h3>
+                <p>
+                    Trots att de förutspåtts matematiskt har inga maskhål ännu upptäckts och det finns mycket som talar emot teorin. Ursprungliga maskhål förutspås existera i mikroskopisk storlek, cirka 10⁻³³ cm, men det är möjligt att de växer då universum expanderar.
+                </p>
+                <p>
+                    Ett annat problem gäller stabiliteten, till följd av gravitationen skulle dessa broar snabbt kollapsa. Einsteins ekvationer visar dessutom att inget med icke-negativ energi skulle kunna passera genom maskhålen, vilket skulle göra dem obrukbara för resor. För att undvika kollaps hade det krävts att de innehöll exempelvis negativ materia.
+                </p>
+            </div>
+            <div class="text-box">
+                <h3>Existensen får framtiden utvisa</h3>
+                <p>
+                    Kanske kommer en Einstein-Rosen bro någon gång hittas, kanske kommer de bara förbli spekulationer och science fiction. Oavsett vilket så är det en spännande matematisk teori som vi med vår pennhållare vill uppmärksamma.
+                </p>
+            </div>
         </div>
         <div class="scroll">
             <span>Vill du veta mer om projektet? Skrolla ner!</span>
@@ -61,11 +79,11 @@
             <p class="highlight">
                 Med Einstein-Rosen broar som inspiration har vi designat och 3D-printat en stilren pennhållare. En rolig och användbar leksak för alla oss fysikintresserade!
             </p>
-            <h3>Om 3D-filerna...</h3>
+            <h3>Om 3D-filerna</h3>
             <p>
                 3D-filerna är skapade i Autodesk Inventor våren 2021. STL-filerna hittas via <a href="https://github.com/tressell/tressell.github.io">denna länk</a> om du är intresserad av att skriva ut din alldeles egna pennhållare. Vi rekommenderar att printa pennhållaren i två delar och därefter sammanfoga delarna med hjälp av exempelvis kontaktlim.
             </p>
-            <h3>Om hemsidan...</h3>
+            <h3>Om hemsidan</h3>
             <p>
                 Denna hemsida är skapad som ett delmoment av kursen TIF275 under årskurs 1 på Teknisk Fysik, Chalmers. Syftet med hemsidan är att ersätta en normalt sett fysisk posterpresentation. Den helt digitala presentationsformen gav möjligheten till en mer interaktiv poster, vilket vi valde att göra i form av denna hemsida. Illustrationerna är skapade i Autodesk Sketchbook. Källkoden hittar du <a href="https://github.com/tressell/tressell.github.io">här</a>.
             </p>
@@ -83,7 +101,7 @@
         </div>
     </article>
     <footer>
-        Projektet är skapat av Tess Ellertsson och Annie Carlsson
+        Projektet är skapat av Annie Carlsson och Tess Ellertsson.
     </footer>
 </body>
 </html>
