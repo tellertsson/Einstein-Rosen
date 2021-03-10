@@ -53,7 +53,7 @@ h3 {
 
 main {
     display: grid;
-    grid-template-columns: [first] auto [line2] 25vw [line3] auto [end];
+    grid-template-columns: [first] 37.5% [line2] 25% [line3] 37.5% [end];
     grid-template-rows: [heading-start] 2.7rem [heading-end] 3.5rem [center-start] auto [center-end] auto [last-line];
     gap: 10px 20px;
     justify-content: center;
@@ -86,12 +86,42 @@ main .sub-header {
 
 main .credit {
     grid-column-start: line3;
-    grid-row-end: heading-end; 
-    text-align: right;
-    font-size:0.8rem;
+    grid-row-start:heading-start;
+    grid-row-end: center-start; 
     animation: appear 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
     animation-delay: 0.3s;
+    display: flex;
+    justify-content: flex-end;
+    font-size:0.8rem;
+    box-sizing: border-box;
 }
+
+main .credit img {
+    height:5rem;
+    margin-right:1rem;
+    cursor:pointer;
+}
+
+.expanded {
+    opacity: 0.3;
+}
+
+#qr-code-page {
+    width:100%;
+    height:0;
+    transition: height 0.4s ease-in-out;
+    display:flex;
+    justify-content: center;
+    background:black;
+}
+
+#qr-code-page img {
+    margin:3rem;
+    max-width:400px;
+    max-height:400px;
+}
+
+
 
 .text-box {
     position: relative;
@@ -325,7 +355,7 @@ footer:hover {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1080px) {
     main {
         display: flex;
         flex-direction: column;
@@ -353,11 +383,16 @@ footer:hover {
     }
 
     main .credit {
-        text-align: left;
+        justify-content: flex-start;
     }
+
+    main .credit #qr-code{
+        display:none;
+    }
+
 }
 
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1650px) {
     main .text-box{
         font-size: 1.1rem;
     }
